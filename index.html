@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapty || Better Way to Manage Workout</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin="" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="/js/main.js" defer></script>
+    <script src="/js/class.js" defer></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <img class="logo" src="/img/logo.png" alt="Mapty Logo">
+        <ul class="workout-list">
+            <form class="form hidden">
+                <div class="form-type form-row">
+                    <label for="type" class="form-label">Type</label>
+                    <select class="form-input form-input--type" name="type" id="type">
+                        <option value="running">Running</option>
+                        <option value="cycling">Cycling</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="distance" class="form-label">Distance</label>
+                    <input class="form-input form-input--distance" type="text" name="distance" id="distance"
+                        placeholder="km" autocomplete="off">
+                </div>
+
+                <div class="form-row">
+                    <label for="duration" class="form-label">Duration</label>
+                    <input class="form-input form-input--duration" type="text" name="duration" id="duration"
+                        placeholder="min" autocomplete="off">
+                </div>
+
+                <div class="form-row">
+                    <label for="cadence" class="form-label">Cadence</label>
+                    <input class="form-input form-input--cadence" type="text" name="cadence" id="cadence"
+                        placeholder="step/min" autocomplete="off">
+                </div>
+
+                <div class="form-row form-row--hidden">
+                    <label for="elev-gain" class="form-label">Elev Gain</label>
+                    <input class="form-input form-input--elevation" type="text" name="elev-gain" id="elev-gain"
+                        placeholder="meters" autocomplete="off">
+                </div>
+                <input class="form-row--hidden" type="submit" value="Ok">
+            </form>
+            <div class="list"></div>
+        </ul>
+        <p>© Copyright by Thanirmalai. Built this through tutorial</p>
+    </div>
+
+    <div id="map">
+    </div>
+</body>
+
+</html>
